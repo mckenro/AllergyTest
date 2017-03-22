@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Allergies</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>What are you allergic to?</h1>
+      <h2>Find out by entering your number below</h2>
+      <form action= "/allergies" method="post">
+        <div class = "form-group">
+          <label for = "allergy">Allergy Number</label>
+          <input type = "number" name = "allergy" class = "form-control">
+        </div>
+        <div class = "form-group">
+          <button type = "submit" class = "btn btn-success">Enter Number</button>
+        </div>
+      </form>
+      <div class= "result">
+        {% for allergy in allergies %}
+          <h4>You are allergic to:</h4>
+          <ul>
+            <li>{{ allergy }}</li>
+          </ul>
+        {% endfor %}
+      </div>
+      <br>
+      <h4><a href="/">Try Again</a></h4>
+    </div>
+  </body>
+</html>
