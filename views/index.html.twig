@@ -12,15 +12,15 @@
       <form action= "/allergies" method="post">
         <div class = "form-group">
           <label for = "allergy">Allergy Number</label>
-          <input type = "number" name = "allergy" class = "form-control">
+          <input max=255 min=1 type = "number" name = "allergy" class = "form-control">
         </div>
         <div class = "form-group">
           <button type = "submit" class = "btn btn-success">Enter Number</button>
         </div>
       </form>
       <div class= "result">
+        <h4>You are allergic to:</h4>
         {% for allergy in allergies %}
-          <h4>You are allergic to:</h4>
           <ul>
             <li>{{ allergy }}</li>
           </ul>
